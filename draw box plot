@@ -1,0 +1,7 @@
+library(ggplot2)
+
+qplot(data$para, data$value, geom = "boxplot")
+
+#等价于
+ggplot(data, aes(x = para, y = value)) 
+    + geom_boxplot()
