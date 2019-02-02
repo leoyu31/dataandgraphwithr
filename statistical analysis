@@ -1,3 +1,4 @@
+```
 #方差齐性分析（Bartlett检验）
 
 test <- bartlett.test(data_name$value ~ data_name$group)    #value:要分析的值； group：分组变量
@@ -23,4 +24,5 @@ test <- aov(value ~ group， data = data_name)
 summary(test)
 testLSD <- LSD.test(test, "group", p.adj = "none")
 testLSD
-
+```
+*123*
