@@ -1,0 +1,11 @@
+library(tidyr)
+
+#使用gather函数将宽数据转换为长数据
+
+gather(data, key, value, ..., na.rm = FALSE, convert = FALSE)
+#data: 需要被转换的数据集；
+key: 将所有列赋值给一个新列key（默认名为key）；
+value：将所有值赋值给一个新列value（默认名为value）；
+na.rm:是否删除缺失值；
+convert:是否对key列进行数据类型转换；
+factor_key:将key列转换为字符串或因子；
