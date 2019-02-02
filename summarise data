@@ -1,7 +1,7 @@
 library(plyr)  #加载包plyr
 
-sum1 <- ddply(data, c("sumname1", "sumname2"), summarise,
-    sumvalue = mean(value, na.rm = TRUE),    #？
+sum1 <- ddply(data, c("sumname1", "sumname2"), summarise,   #sumname为长数据中的分组变量名（先使用tidyr中的gather函数转换）
+    sumvalue = mean(value, na.rm = TRUE),    #value为长数据中的数值变量名
     sd = sd(value, na.rm = TRUE),
     n = sum(!is.na(value)),    #？
     se = sd/sqrt(n)）
