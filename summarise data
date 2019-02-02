@@ -4,5 +4,5 @@ sum1 <- ddply(data, c("sumname1", "sumname2"), summarise,
     sumvalue = mean(value, na.rm = TRUE),    #？
     sd = sd(value, na.rm = TRUE),
     n = sum(!is.na(value)),    #？
-    se = sd/sqrt(n)
+    se = sd/sqrt(n)）
 sum1
