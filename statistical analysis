@@ -1,0 +1,26 @@
+#方差齐性分析（Bartlett检验）
+
+test <- bartlett.test(data_name$value ~ data_name$group)    #value:要分析的值； group：分组变量
+#这等价于：
+bartlett.test(value ~ group， data = data_name)
+
+test
+
+
+#单因素方差分析（one-way annova)
+
+test <- summary(aov(value ~ group， data = data_name))
+test
+
+#多重比较（multiple comparison）
+
+##Tukey post-hoc（HSD）
+test <- TukeyHSD(aov(value ~ group， data = data_name), "group", ordered = TRUE)
+test
+
+##LSD (使用agricolae包）
+test <- aov(value ~ group， data = data_name)
+summary(test)
+testLSD <- LSD.test(test, "group", p.adj = "none")
+testLSD
+
