@@ -2,3 +2,5 @@
 
 qqnorm(data_name$column_name)
 qqline(data_name$column_name)
+
+#数据在分析之前最好做方差齐性检验（Bartlett方法）
