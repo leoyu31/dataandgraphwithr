@@ -1,9 +1,10 @@
 #方差齐性分析（Bartlett检验）
 
 test <- bartlett.test(data_name$value ~ data_name$group)    #value:要分析的值； group：分组变量
+test
+
 #这等价于：
 bartlett.test(value ~ group， data = data_name)
-
 test
 
 
@@ -12,16 +13,26 @@ test
 test <- summary(aov(value ~ group， data = data_name))
 test
 
+#这等价于：
+test <- oneway.test(data ~ group, var.equal = TRUE or FALSE)   #是否指定方差齐性对结果影响不大
+test
+
+#也等价于：
+test <- anova(lm(data ~ group))
+test
+
+
 #多重比较（multiple comparison）
 
 ##Tukey post-hoc（HSD）
 test <- TukeyHSD(aov(value ~ group， data = data_name), "group", ordered = TRUE)
 test
+#Tukey方法的检出精度较高
 
 ##LSD (使用agricolae包）
 test <- aov(value ~ group， data = data_name)
 summary(test)
 testLSD <- LSD.test(test, "group", p.adj = "none")
 testLSD
-
+#LSD法的检出精度低，但检出率高（Duncan法类似）
 
