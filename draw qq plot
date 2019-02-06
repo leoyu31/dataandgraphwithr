@@ -1,0 +1,4 @@
+#QQ图可以用来简单判断样本数据是否符合正态分布。
+
+qqnorm(data_name$column_name)
+qqline(data_name$column_name)
