@@ -1,5 +1,13 @@
-ggplot(data, aes(x = parameter, y = sum_value)） +
+##添加误差线:使用geom_errorbar命令
+
+ggplot(data, aes(x = parameter, y = sum_value)) +
     geom_bar(stat="identity", fill = color1, colour = color2)+   #stat="identity"
     geom_errorbar(aes(ymin = sum_value - se, ymax = sum_value + se), width = 0.2)
 
 #一般fill可用白色, colour可用黑色
+
+
+##添加显著性标记(字母)或其他数据标签:使用geom_text命令
+
+ggplot() + geom_txt(aes(label = data$group 或label = c("a","b", "c")), vjust = -0.2 ~ 0.5)
+#数据标签位于条形图上方
