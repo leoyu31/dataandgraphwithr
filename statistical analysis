@@ -22,11 +22,17 @@ test <- anova(lm(data ~ group))
 test
 
 
+
 #多重比较（multiple comparison）
 
 ##Tukey post-hoc（HSD）
-test <- TukeyHSD(aov(value ~ group， data = data_name), "group", ordered = TRUE)
+test <- TukeyHSD(aov(value ~ group， data = data_name), "group", ordered = TRUE) #group为分类变量名
 test
+
+#这等价于:
+library(agricolae)
+test <- HSD.test(aov(value ~ group， data = data_name), "treatment", alpha = 0.05, group = TRUE)
+test    #treatment为分类变量名, group为差异显著性标签
 #Tukey方法的检出精度较高
 
 ##LSD (使用agricolae包）
