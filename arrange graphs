@@ -1,0 +1,33 @@
+#先分别绘制各子图
+
+chart1 <- ggplot()
+chart2 <- ggplot()
+chart3 <- ggplot()
+
+
+#方法一：使用grid包中的layout函数
+
+library(grid)
+
+grid.newpage()   #新建图表版面
+pushViewport(viewport(layout = grid.layout(2,2)))   #将版面切分为2*2的矩阵
+vplayout <- function(x,y){viewport(layout.pos.row = x, layout.pos.col = y)}
+
+print(chart1, vp = vplayout(1, 1:2))    #在第一行画大小为2的图一
+print(chart2, vp = vplayout(2, 1))      #在第二行左侧画大小为1的图二
+print(chart3, vp = vplayout(2, 2))      #在第二行右侧画大小为1的图三
+
+dev.off()  #关闭活动版面
+
+
+#方法二：使用Rmisc包中的multiplot函数
+
+library(Rmisc)
+library(plyr)
+
+#右下角留白
+multiplot(chart1, chart2, chart3, cols = 2)    #无法调整各子图的大小
+#右上角留白
+multiplot(chart1, “none", chart2, chart3, cols = 2)
+
+dev.off()
