@@ -1,0 +1,36 @@
+#建立线性回归模型
+
+lm <- lm(y ~ x1 + x2 + x3 + x4, data = data)
+lm
+
+
+#回归模型的显著性检验
+
+sum <- summary(lm)
+#同时有t检验与F检验的结果
+#检查adjusted R-squared水平
+
+
+#回归模型的残差检验与异常点检测
+
+par(mfrow = c(2,2))
+plot(lm)
+#检验残差与拟合值、QQ图、标准化残差平方根与拟合值、标准化残差与杠杆值
+
+
+#模型调整与优化（如果需要）
+
+#检查y与各x的关系
+pairs(as.data.frame(data))
+
+#调整自变量(例）
+lm_2 <- update(lm, .~. -x2)   #去除x2变量
+lm_3 <- update(lm, .~. +x1x2)  #增加x1*x2变量
+
+summary(lm_2)
+summary(lm_3)
+
+#逐步回归
+step(lm)  #检查AIC值（越小越好）
+
+
