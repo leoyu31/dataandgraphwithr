@@ -1,0 +1,17 @@
+#基本语法：
+
+line_1 <- ggplot(data, aes( x = factor_1)) + geom_line(aes(y = value_1))
+
+
+#绘制带阴影（面积）的折线图：
+
+line_with_ribbon <- line_1 + geom_ribbon(aes(ymin = value_1 - width, ymax = value_1 + width), fill = "colour")
+
+
+#绘制积分图：
+
+line_with_shadow <- line_1 + geom_area(aes(y = value_1))
+
+#这等价于：
+
+line_with_shadow <- line_1 + geom_ribbon(aes(ymin = 0, ymax = value_1))
