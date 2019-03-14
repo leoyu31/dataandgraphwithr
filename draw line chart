@@ -16,10 +16,10 @@ line_with_shadow <- line_1 + geom_area(aes(y = value_1))
 
 line_with_shadow <- line_1 + geom_ribbon(aes(ymin = 0, ymax = value_1)) 
 
-
-pd <- position_dodge(0.1)   #
+#设置横向偏移(防止点重合）
+pd <- position_dodge(0.1)   # 设置偏移距离
 
 graph <- ggplot(data, aes(x = , y = , colour = , group = )) + geom_errorbar(aes(), width = 0.1, position = pd) 
-         + geom_line(position = pd) + geom_point(position = pd)
+         + geom_line(position = pd) + geom_point(position = pd)   # group重要
          
 
