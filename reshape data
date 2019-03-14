@@ -25,3 +25,17 @@ melt(data_name, id.vars = "id", variable.name = "var", value.name = "value")
 
 #使用measure.vars()指明要分析的数据来自哪几列
 melt(..., measure.vars = c("var1", "var2", ...), ...)
+
+
+
+###选取数据子集（数据中的某几行）
+
+##使用subset函数
+
+sub_data <- subset(data, group_name == "value or string" & or | group_name < or > value)
+# 筛选条件可同时使用，使用操作符间隔：&（AND），|（OR）
+
+##指定行和列的数值位置（不推荐)
+sub_data <- data(x : y, c(a, b, c))  #子集包含data中从第x行到第y行第a, b, c三列的数据
+
+
