@@ -1,7 +1,7 @@
 ##添加误差线:使用geom_errorbar命令
 
 ggplot(data, aes(x = parameter, y = sum_value)) +
-    geom_bar(stat="identity", fill = color1, colour = color2)+   #stat="identity"
+    geom_bar(stat="identity", fill = color1, colour = color2， width = 0.9 )+   #stat="identity"
     geom_errorbar(aes(ymin = sum_value - se, ymax = sum_value + se), width = 0.2)
 
 #一般fill可用白色, colour可用黑色
