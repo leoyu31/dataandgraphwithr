@@ -18,6 +18,12 @@ ggplot() + geom_txt(aes(label = data$group 或label = c("a","b", "c")), vjust = 
 ggplot() + xlab("aaaa") + ylab("bbbb")
 
 
+
+##
+
+ggplot + coord_cartesian(ylim = c(x, y))   # for contigeous values
+
+
 ##添加图表标题
 
 ggplot + ggtitle("aaaaaa") + theme(plot.title = element_text(hjust = 0.5))  #hjust控制标题居中
