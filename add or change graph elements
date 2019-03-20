@@ -19,7 +19,7 @@ ggplot() + xlab("aaaa") + ylab("bbbb")
 
 
 
-##
+##设置y轴的显示范围
 
 ggplot + coord_cartesian(ylim = c(x, y))   # for contigeous values
 
