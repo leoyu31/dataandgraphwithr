@@ -1,4 +1,4 @@
-## 添加误差线:使用geom_errorbar命令
+##添加误差线:使用geom_errorbar命令
 
 ggplot(data, aes(x = parameter, y = sum_value)) +
     geom_bar(stat="identity", fill = color1, colour = color2， width = 0.9 )+   #stat="identity"
