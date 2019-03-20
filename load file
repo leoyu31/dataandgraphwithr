@@ -1,7 +1,0 @@
-data <- read.csv("文件路径\\file.csv)
-
-#参数设置
-列名： header = TRUE or FALSE；
-分隔符： sep = " " or "," or "\t";
-新建列名： names(data) <- c("column1", "column2", "column3");
-列为因子或非因子： stringAsFactors = TRUE or FALSE;
