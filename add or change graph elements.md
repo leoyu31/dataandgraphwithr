@@ -28,3 +28,8 @@ ggplot + coord_cartesian(ylim = c(x, y))   # for contigeous values
 
 ggplot + ggtitle("aaaaaa") + theme(plot.title = element_text(hjust = 0.5))  #hjust控制标题居中
 
+
+##修改主题为黑色主题：
+ggplot + theme.bw()
+#注意主题命令的使用顺序
+
