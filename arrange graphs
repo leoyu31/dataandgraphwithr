@@ -31,3 +31,10 @@ multiplot(chart1, chart2, chart3, cols = 2)    #无法调整各子图的大小
 multiplot(chart1, “none", chart2, chart3, cols = 2)
 
 dev.off()
+
+
+#方法二：使用cowplot包中的plot_grid函数
+
+library(cowplot)
+
+plot_grid(chart1, chart2, chart3, NULL, lables = c("A", ..., "D"), align = "h" or "v", ncol = 2)
