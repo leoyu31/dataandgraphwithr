@@ -24,6 +24,11 @@ ggplot() + xlab("aaaa") + ylab("bbbb")
 ggplot + coord_cartesian(ylim = c(x, y))   # for contigeous values
 
 
+##设置y轴连续性坐标起点
+
+scale_y_continuous(expand=c(0,0))
+
+
 ##添加图表标题
 
 ggplot + ggtitle("aaaaaa") + theme(plot.title = element_text(hjust = 0.5))  #hjust控制标题居中
